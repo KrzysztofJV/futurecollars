@@ -1,6 +1,6 @@
 package fc.introduction.ageVerification;
 
-public class AgeVerification {
+public class AgeVerifier {
 
     public String ageVerify(int a) {
 
