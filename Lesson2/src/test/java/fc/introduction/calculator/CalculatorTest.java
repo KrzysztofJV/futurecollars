@@ -2,7 +2,6 @@ package fc.introduction.calculator;
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
-import static org.junit.jupiter.api.Assertions.*;
 
 class CalculatorTest {
 
@@ -27,7 +26,7 @@ class CalculatorTest {
     }
 
     @Test
-    public void subtraction() {
+    public void subtract() {
 
         //given
         double firstNumber=2;
@@ -36,9 +35,9 @@ class CalculatorTest {
 
         //when
         Calculator calculator = new Calculator();
-        double sub1 = calculator.subtraction(firstNumber, secondNumber);
-        double sub2 = calculator.subtraction(firstNumber, thirdNumber);
-        double sub3 = calculator.subtraction(secondNumber, thirdNumber);
+        double sub1 = calculator.subtract(firstNumber, secondNumber);
+        double sub2 = calculator.subtract(firstNumber, thirdNumber);
+        double sub3 = calculator.subtract(secondNumber, thirdNumber);
 
         //then
         Assertions.assertEquals(-1,sub1);
@@ -47,7 +46,7 @@ class CalculatorTest {
     }
 
     @Test
-    void multiplication() {
+    void multiply() {
 
         //given
         double firstNumber=2;
@@ -56,9 +55,9 @@ class CalculatorTest {
 
         //when
         Calculator calculator = new Calculator();
-        double mul1 = calculator.multiplication(firstNumber, secondNumber);
-        double mul2 = calculator.multiplication(firstNumber, thirdNumber);
-        double mul3 = calculator.multiplication(secondNumber, thirdNumber);
+        double mul1 = calculator.multiply(firstNumber, secondNumber);
+        double mul2 = calculator.multiply(firstNumber, thirdNumber);
+        double mul3 = calculator.multiply(secondNumber, thirdNumber);
 
         //then
         Assertions.assertEquals(6,mul1);

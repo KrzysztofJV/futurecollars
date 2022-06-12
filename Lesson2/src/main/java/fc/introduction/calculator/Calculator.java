@@ -6,11 +6,11 @@ public class Calculator {
         return firstNumber + secondNumber;
     }
 
-    public double subtraction(double firstNumber, double secondNumber) {
+    public double subtract(double firstNumber, double secondNumber) {
         return firstNumber - secondNumber;
     }
 
-    public double multiplication(double firstNumber, double secondNumber) {
+    public double multiply(double firstNumber, double secondNumber) {
         return firstNumber * secondNumber;
     }
 
