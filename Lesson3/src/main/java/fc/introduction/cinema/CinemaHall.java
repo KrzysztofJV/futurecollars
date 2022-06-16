@@ -1,4 +1,4 @@
-package fc.introduction;
+package fc.introduction.cinema;
 
 public class CinemaHall {
 
