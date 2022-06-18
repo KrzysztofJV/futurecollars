@@ -2,7 +2,7 @@ package fc.introduction.ageVerification;
 
 public class AgeVerifier {
 
-    public String ageVerify(int a) {
+    public String verifyAge(int a) {
 
         if (a > 18) {
             return "User's age is more than 18 years old.";
