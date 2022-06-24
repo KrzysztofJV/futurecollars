@@ -6,7 +6,7 @@ public class Square extends Shape{
 
     public Square(double width) {
         this.width = width;
-        if (width <= 0) throw new RuntimeException();
+        if (width <= 0) throw new RuntimeException("Error: the side of the square must be greater than zero.");
     }
 
     @Override
