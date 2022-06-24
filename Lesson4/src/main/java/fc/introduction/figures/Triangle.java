@@ -11,7 +11,8 @@ public class Triangle extends Shape{
         this.secondSide = secondSide;
         this.thirdSide = thirdSide;
 
-        if (firstSide<=0 || secondSide<=0 || thirdSide<=0) throw new RuntimeException();
+        if (firstSide<=0 || secondSide<=0 || thirdSide<=0)
+            throw new RuntimeException("Error: the sides of the triangle must be greater than zero.");
     }
 
     @Override

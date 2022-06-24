@@ -7,7 +7,7 @@ public class Circle extends Shape{
 
     public Circle(double radius) {
         this.radius = radius;
-        if (radius <= 0) throw new RuntimeException();
+        if (radius <= 0) throw new RuntimeException("Error: the radius of the circle must be greater than zero.");
     }
 
     @Override
