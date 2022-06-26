@@ -1,8 +1,7 @@
-package fc.introduction.figures;
+package fc.introduction.areaAndPerimeter;
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
-
 import static org.junit.jupiter.api.Assertions.*;
 
 class SquareTest {
@@ -29,7 +28,7 @@ class SquareTest {
         RuntimeException result = assertThrows(RuntimeException.class, () -> new Square(width));
 
         //then
-        Assertions.assertEquals("Error: the side of the square must be greater than zero.", result.getMessage());
+        Assertions.assertEquals("Error: the width of the square must be greater than zero.", result.getMessage());
     }
 
     @Test
@@ -41,7 +40,7 @@ class SquareTest {
         RuntimeException result = assertThrows(RuntimeException.class, () -> new Square(width));
 
         //then
-        Assertions.assertEquals("Error: the side of the square must be greater than zero.", result.getMessage());
+        Assertions.assertEquals("Error: the width of the square must be greater than zero.", result.getMessage());
     }
 
     @Test
