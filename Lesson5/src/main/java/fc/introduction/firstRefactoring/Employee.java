@@ -5,44 +5,44 @@ import java.math.BigDecimal;
 public class Employee {
 
     private final String name;
-    private final String surname;
+    private final String surName;
     private int age;
     private BigDecimal baseSalary;
     private BigDecimal bonus;
-    public static final String WHITE_SPACE = " ";
+    public static final String whiteSpace = " ";
 
-    public Employee(String name, String surname) {
+    public Employee(String name, String surName) {
         this.name = name;
-        this.surname = surname;
+        this.surName = surName;
     }
 
-    public Employee(String name, String surname, int age) {
+    public Employee(String name, String surName, int age) {
         this.name = name;
         this.age = age;
-        this.surname = surname;
+        this.surName = surName;
     }
 
-    public Employee(String name, String surname, int age, BigDecimal baseSalary) {
+    public Employee(String name, String surName, int age, BigDecimal baseSalary) {
         this.name = name;
         this.age = age;
         this.baseSalary = baseSalary;
-        this.surname = surname;
+        this.surName = surName;
     }
 
-    public Employee(String name, int age, BigDecimal baseSalary, BigDecimal bonus, String surname) {
+    public Employee(String name, int age, BigDecimal baseSalary, BigDecimal bonus, String surName) {
         this.name = name;
         this.age = age;
         this.baseSalary = baseSalary;
         this.bonus = bonus;
-        this.surname = surname;
+        this.surName = surName;
     }
 
     public String getEmployeeInfo() {
-        return "Employee name : " + name + WHITE_SPACE + surname;
+        return "Employee name : " + name + whiteSpace + surName;
     }
 
     public String getEmployeeDetails() {
-        return "Employee details : " + name + WHITE_SPACE + surname + " is " + age;
+        return "Employee details : " + name + whiteSpace + surName + " is " + age;
     }
 
     public BigDecimal getBaseSalary() {
