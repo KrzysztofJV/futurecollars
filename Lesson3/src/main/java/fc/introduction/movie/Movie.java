@@ -2,10 +2,25 @@ package fc.introduction.movie;
 
 public class Movie {
 
-    public static void main(String[] args) {
-        MovieFeatures movieFeatures = new MovieFeatures("Pirates of the Caribbean: At World’s End",
-                "Gore Verbinski",120,2003);
+    private String title;
+    private String directorNameAndSurname;
+    private int movieDuration;
+    private int yearProduction;
 
-        System.out.println(movieFeatures.toString());
+    public Movie(String title, String directorNameAndSurname, int movieDuration, int yearProduction) {
+        this.title = title;
+        this.directorNameAndSurname = directorNameAndSurname;
+        this.movieDuration = movieDuration;
+        this.yearProduction = yearProduction;
+    }
+
+    @Override
+    public String toString() {
+        return "MovieFeatures{" +
+                "title='" + title + '\'' +
+                ", nameAndSurnameDirector='" + directorNameAndSurname + '\'' +
+                ", duration=" + movieDuration +
+                ", productionYear=" + yearProduction +
+                '}';
     }
 }
