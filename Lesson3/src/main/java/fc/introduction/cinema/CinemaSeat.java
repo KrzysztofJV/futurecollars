@@ -12,18 +12,6 @@ public class CinemaSeat {
         this.state = state;
     }
 
-    public void setState(boolean state) {
-        this.state = state;
-    }
-
-    public int getSeatNumber() {
-        return seatNumber;
-    }
-
-    public int getRowNumber() {
-        return rowNumber;
-    }
-
     public boolean isSeatFree(){
         return state;
     }
