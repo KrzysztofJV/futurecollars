@@ -7,7 +7,7 @@ import static fc.introduction.triangle.RightTriangle.isRightTriangle;
 class RightTriangleTest {
 
     @Test
-    void shouldNotBeRightTriangleSidesTwoSevenAndNine() {
+    void shouldNotBeRightTriangleWhenFirstSideIsTooLong() {
         //given
         int firstSide = 2;
         int secondSide = 7;
@@ -22,7 +22,7 @@ class RightTriangleTest {
     }
 
     @Test
-    void shouldBeRightTriangleSidesThreeFiveAndFour() {
+    void shouldBeRightTriangleWhenAllSidesInFirstCombinationHaveTheCorrectLength() {
         //given
         int firstSide = 3;
         int secondSide = 5;
@@ -36,7 +36,7 @@ class RightTriangleTest {
     }
 
     @Test
-    void shouldBeRightTriangleSidesEightSixAndTen() {
+    void shouldBeRightTriangleWhenAllSidesInSecondCombinationHaveTheCorrectLength() {
         //given
         int firstSide = 8;
         int secondSide = 6;
@@ -50,11 +50,25 @@ class RightTriangleTest {
     }
 
     @Test
-    void shouldNotBeRightTriangleSidesZeroFiveAndMinusThree() {
+    void shouldNotBeRightTriangleWhenOneSideHaveNoLength() {
         //given
         int firstSide = 0;
         int secondSide = 5;
-        int thirdSide = -3;
+        int thirdSide = 7;
+
+        //when
+        String triangleToCheck = isRightTriangle(firstSide, secondSide, thirdSide);
+
+        //then
+        Assertions.assertEquals(triangleToCheck,"Invalid");
+    }
+
+    @Test
+    void shouldNotBeRightTriangleWhenOneSideIsNegative() {
+        //given
+        int firstSide = 3;
+        int secondSide = 5;
+        int thirdSide = -7;
 
         //when
         String triangleToCheck = isRightTriangle(firstSide, secondSide, thirdSide);
