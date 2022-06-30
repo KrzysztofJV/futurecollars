@@ -25,5 +25,4 @@ public class Manager extends BaseEmployee{
     public int getYearOfEmployment() {
         return super.getYearOfEmployment();
     }
-
 }

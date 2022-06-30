@@ -2,8 +2,8 @@ package fc.introduction.cinemaEmployees;
 
 public abstract class BaseEmployee {
 
-    private String name;
-    private String surname;
+    private final String name;
+    private final String surname;
     private final int basicSalary;
     private final int yearOfEmployment;
 
@@ -22,15 +22,5 @@ public abstract class BaseEmployee {
 
     public int getYearOfEmployment() {
         return 2022-yearOfEmployment;
-    }
-
-    @Override
-    public String toString() {
-        return "BaseEmployee{" +
-                "name='" + name + '\'' +
-                ", surname='" + surname + '\'' +
-                ", basicSalary=" + basicSalary +
-                ", yearOfEmployment=" + yearOfEmployment +
-                '}';
     }
 }
