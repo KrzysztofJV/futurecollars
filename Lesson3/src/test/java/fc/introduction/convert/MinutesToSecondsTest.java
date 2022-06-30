@@ -7,7 +7,7 @@ import static fc.introduction.convert.MinutesToSeconds.convertMinutesToSeconds;
 class MinutesToSecondsTest {
 
     @Test
-    public void convertZeroMinutesToSeconds() {
+    public void shouldConvertNoMinutesToSeconds() {
         //given
         int valueToConvert = 0;
 
@@ -19,7 +19,7 @@ class MinutesToSecondsTest {
     }
 
     @Test
-    public void convertSixtyMinutesToSeconds() {
+    public void shouldConvertMinutesToSeconds() {
         //given
         int valueToConvert = 60;
 
@@ -31,7 +31,7 @@ class MinutesToSecondsTest {
     }
 
     @Test
-    public void convertMinusFiveMinutesToSeconds() {
+    public void shouldNotConvertInvalidMinutes() {
 
         Assertions.assertThrows(RuntimeException.class, () -> {
             convertMinutesToSeconds(-6);
