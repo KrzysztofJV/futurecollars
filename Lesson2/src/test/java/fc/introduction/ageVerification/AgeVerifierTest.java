@@ -6,44 +6,41 @@ import org.junit.jupiter.api.Test;
 class AgeVerifierTest {
 
     @Test
-    public void shouldReturnCorrectResultWhenUserAgeIsHigher() {
-
+    public void shouldReturnCorrectResultWhenUserIsMoreThanOfAge() {
         //given
-        int firstUserAge = 50;
+        int age = 50;
+        AgeVerifier ageVerifier = new AgeVerifier();
 
         //when
-        AgeVerifier ageVerifier = new AgeVerifier();
-        String firstAgeNumber = ageVerifier.verifyAge(firstUserAge);
+        String result = ageVerifier.verifyAge(age);
 
         //then
-        Assertions.assertEquals(firstAgeNumber,"User's age is more than 18 years old.");
+        Assertions.assertEquals("User's age is more than 18 years old.", result);
     }
 
     @Test
-    public void shouldReturnCorrectResultWhenUserAgeIsLess() {
-
+    public void shouldReturnCorrectResultWhenUserIsLessThanOfAge() {
         //given
-        int firstUserAge = 15;
+        int age = 15;
+        AgeVerifier ageVerifier = new AgeVerifier();
 
         //when
-        AgeVerifier ageVerifier = new AgeVerifier();
-        String firstAgeNumber = ageVerifier.verifyAge(firstUserAge);
+        String result = ageVerifier.verifyAge(age);
 
         //then
-        Assertions.assertEquals(firstAgeNumber,"User's age is less than 18 years old.");
+        Assertions.assertEquals("User's age is more than 18 years old.", result);
     }
 
     @Test
-    public void shouldReturnCorrectResultWhenUserAgeIsEqual() {
-
+    public void shouldReturnCorrectResultWhenUserIsOfAge() {
         //given
-        int firstUserAge = 18;
+        int age = 18;
+        AgeVerifier ageVerifier = new AgeVerifier();
 
         //when
-        AgeVerifier ageVerifier = new AgeVerifier();
-        String firstAgeNumber = ageVerifier.verifyAge(firstUserAge);
+        String result = ageVerifier.verifyAge(age);
 
         //then
-        Assertions.assertEquals(firstAgeNumber,"User's age is 18 years old.");
+        Assertions.assertEquals("User's age is 18 years old.", result);
     }
 }
