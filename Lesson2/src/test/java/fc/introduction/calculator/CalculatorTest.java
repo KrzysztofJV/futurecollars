@@ -62,6 +62,6 @@ class CalculatorTest {
         double result = calculator.divide(firstNumber, secondNumber);
 
         //then
-        Assertions.assertEquals(0.6666666666666666,result);
+        Assertions.assertEquals(0.6, result, 0.1);
     }
 }
