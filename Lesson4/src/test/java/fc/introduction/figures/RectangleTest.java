@@ -14,7 +14,7 @@ class RectangleTest {
         double height = 3;
 
         //when
-        Rectangle rectangle = new Rectangle(width, height);
+        Rectangle rectangle = new Rectangle(height, width);
         double result = rectangle.getArea();
 
         //then
@@ -28,7 +28,7 @@ class RectangleTest {
         double height = 0;
 
         //when
-        RuntimeException result = assertThrows(RuntimeException.class, () -> new Rectangle(width, height));
+        RuntimeException result = assertThrows(RuntimeException.class, () -> new Rectangle(height, width));
 
         //then
         Assertions.assertEquals("Error: the sides of the rectangle must be greater than zero.", result.getMessage());
@@ -41,7 +41,7 @@ class RectangleTest {
         double height = -5;
 
         //when
-        RuntimeException result = assertThrows(RuntimeException.class, () -> new Rectangle(width, height));
+        RuntimeException result = assertThrows(RuntimeException.class, () -> new Rectangle(height, width));
 
         //then
         Assertions.assertEquals("Error: the sides of the rectangle must be greater than zero.", result.getMessage());
@@ -54,7 +54,7 @@ class RectangleTest {
         double height = 3;
 
         //when
-        Rectangle rectangle = new Rectangle(width, height);
+        Rectangle rectangle = new Rectangle(height, width);
         double result = rectangle.getPerimeter();
 
         //then

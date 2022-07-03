@@ -1,12 +1,13 @@
 package fc.introduction.figures;
 
-public class Rectangle extends Square{
+public class Rectangle extends Shape{
 
     public final double height;
+    public final double width;
 
-    public Rectangle(double width, double height) {
-        super(width);
+    public Rectangle(double height, double width) {
         this.height = height;
+        this.width = width;
         if (height <= 0) throw new RuntimeException("Error: the sides of the rectangle must be greater than zero.");
     }
 

@@ -15,6 +15,7 @@ public class Triangle extends Shape{
             throw new RuntimeException("Error: the sides of the triangle must be greater than zero.");
     }
 
+    //The heron's pattern was used to calculate triangle area.
     @Override
     public double getArea() {
         double halfPerimeterTriangle = (firstSide+secondSide+thirdSide)/2;
