@@ -6,10 +6,12 @@ import java.nio.file.Paths;
 
 public class FileReader {
 
-    public void writeToFileWatchIt(String pathToFile, String text) {
+    private static final String pathToResources = "Lesson6/src/main/resources/";
+
+    public static void readFromFile(String nameOfFile) {
         try {
-            Files.writeString(Paths.get(pathToFile), text);
-            System.out.println(text);
+            String result = Files.readString(Paths.get(pathToResources + nameOfFile));
+            System.out.println(result);
         } catch (IOException exception) {
             exception.printStackTrace();
         }
