@@ -3,7 +3,7 @@ package fc.introduction.textFormatter;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
-class ToUpperCaseTest {
+class UpperCaseFormatterTest {
 
     @Test
     void shouldPrintTextUpperCase() {
@@ -11,7 +11,7 @@ class ToUpperCaseTest {
         String text = "Java is cool language.";
 
         //when
-        ToUpperCase toUpperCase = new ToUpperCase();
+        UpperCaseFormatter toUpperCase = new UpperCaseFormatter();
         String result = toUpperCase.formatText(text);
 
         //then
@@ -24,7 +24,7 @@ class ToUpperCaseTest {
         String text = "JAVA IS COOL LANGUAGE.";
 
         //when
-        ToUpperCase toUpperCase = new ToUpperCase();
+        UpperCaseFormatter toUpperCase = new UpperCaseFormatter();
         String result = toUpperCase.formatText(text);
 
         //then

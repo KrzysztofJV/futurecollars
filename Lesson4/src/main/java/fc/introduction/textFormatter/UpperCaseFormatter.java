@@ -2,9 +2,9 @@ package fc.introduction.textFormatter;
 
 import java.util.Locale;
 
-public class ToUpperCase implements TextFormatter{
+public class UpperCaseFormatter implements TextFormatter{
 
-    public ToUpperCase() {
+    public UpperCaseFormatter() {
     }
 
     @Override

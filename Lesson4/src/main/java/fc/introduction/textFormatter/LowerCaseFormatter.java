@@ -2,9 +2,9 @@ package fc.introduction.textFormatter;
 
 import java.util.Locale;
 
-public class ToLowerCase implements TextFormatter{
+public class LowerCaseFormatter implements TextFormatter{
 
-    public ToLowerCase() {
+    public LowerCaseFormatter() {
     }
 
     @Override

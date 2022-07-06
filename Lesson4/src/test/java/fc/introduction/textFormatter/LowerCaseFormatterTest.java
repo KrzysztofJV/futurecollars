@@ -3,7 +3,7 @@ package fc.introduction.textFormatter;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
-class ToLowerCaseTest {
+class LowerCaseFormatterTest {
 
     @Test
     void shouldPrintTextLowerCase() {
@@ -11,7 +11,7 @@ class ToLowerCaseTest {
         String text = "Java is cool language.";
 
         //when
-        ToLowerCase toLowerCase = new ToLowerCase();
+        LowerCaseFormatter toLowerCase = new LowerCaseFormatter();
         String result = toLowerCase.formatText(text);
 
         //then
@@ -24,7 +24,7 @@ class ToLowerCaseTest {
         String text = "java is cool language.";
 
         //when
-        ToLowerCase toLowerCase = new ToLowerCase();
+        LowerCaseFormatter toLowerCase = new LowerCaseFormatter();
         String result = toLowerCase.formatText(text);
 
         //then
