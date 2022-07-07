@@ -1,17 +1,17 @@
 package fc.introduction.taskTwo;
 
 import java.io.*;
-import java.nio.file.Files;
-import java.nio.file.Paths;
 
 public class EverySecondLine {
 
-    public void printTheEverySecondLineInTheFile(File file) {
+    private static final String pathToResources = "Lesson6/src/main/resources/";
+
+    public static void printTheEverySecondLineInTheFile(String nameOfFile) {
         int lineNumber = 0;
         String line = null;
 
         try {
-            BufferedReader bufferedReader = new BufferedReader(new FileReader(file));
+            BufferedReader bufferedReader = new BufferedReader(new FileReader(pathToResources + nameOfFile));
             while (true) {
                 try {
                     if ((line = bufferedReader.readLine()) == null) break;
