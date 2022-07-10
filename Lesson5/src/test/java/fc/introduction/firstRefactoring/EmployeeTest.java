@@ -2,7 +2,6 @@ package fc.introduction.firstRefactoring;
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
-import java.math.BigDecimal;
 
 class EmployeeTest {
 
@@ -44,12 +43,11 @@ class EmployeeTest {
         int baseSalary = 2800;
 
         //given
-        BigDecimal bigDecimal = new BigDecimal(baseSalary);
-        Employee employee = new Employee(name,surname,age,bigDecimal);
-        BigDecimal result = employee.getBaseSalary();
+        Employee employee = new Employee(name,surname,age,baseSalary);
+        int result = employee.getBaseSalary();
 
         //then
-        Assertions.assertEquals(bigDecimal,result);
+        Assertions.assertEquals(baseSalary,result);
     }
 
     @Test
@@ -62,13 +60,11 @@ class EmployeeTest {
         int bonus = 700;
 
         //given
-        BigDecimal basicSalary = new BigDecimal(baseSalary);
-        BigDecimal aloneBonus = new BigDecimal(bonus);
-        Employee employee = new Employee(name,age,basicSalary,aloneBonus,surname);
-        BigDecimal result = employee.getBonus();
+        Employee employee = new Employee(name,age,baseSalary,bonus,surname);
+        int result = employee.getBonus();
 
         //then
-        Assertions.assertEquals(aloneBonus,result);
+        Assertions.assertEquals(bonus,result);
     }
 
     @Test
@@ -81,12 +77,10 @@ class EmployeeTest {
         int bonus = 700;
 
         //given
-        BigDecimal basicSalary = new BigDecimal(baseSalary);
-        BigDecimal aloneBonus = new BigDecimal(bonus);
-        Employee employee = new Employee(name,age,basicSalary,aloneBonus,surname);
-        BigDecimal result = employee.getTotalSalary();
+        Employee employee = new Employee(name,age,baseSalary,bonus,surname);
+        int result = employee.getTotalSalary();
 
         //then
-        Assertions.assertEquals(basicSalary.add(aloneBonus),result);
+        Assertions.assertEquals(3500,result);
     }
 }
