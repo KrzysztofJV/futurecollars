@@ -12,13 +12,11 @@ public class Circle extends Shape{
 
     @Override
     public double getArea() {
-        System.out.println("The area of circle is ");
         return piNumber*(Math.pow(radius,2));
     }
 
     @Override
     public double getPerimeter() {
-        System.out.println("The perimeter of circle is");
         return 2*piNumber*radius;
     }
 }

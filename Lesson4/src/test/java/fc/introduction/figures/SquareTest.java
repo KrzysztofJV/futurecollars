@@ -11,10 +11,9 @@ class SquareTest {
     void shouldCalculateAreaWithWidthTwo() {
         //given
         double width = 2;
-        double height = 2;
 
         //when
-        Square square = new Square(height,width);
+        Square square = new Square(width);
         double result = square.getArea();
 
         //then
@@ -25,10 +24,9 @@ class SquareTest {
     void shouldCalculateExceptionWithWidthZero() {
         //given
         double width = 0;
-        double height = 5;
 
         //when
-        RuntimeException result = assertThrows(RuntimeException.class, () -> new Square(height,width));
+        RuntimeException result = assertThrows(RuntimeException.class, () -> new Square(width));
 
         //then
         Assertions.assertEquals("Error: the side of the square must be greater than zero.", result.getMessage());
@@ -38,10 +36,9 @@ class SquareTest {
     void shouldCalculateExceptionWithWidthMinusFive() {
         //given
         double width = -5;
-        double height = 4;
 
         //when
-        RuntimeException result = assertThrows(RuntimeException.class, () -> new Square(height,width));
+        RuntimeException result = assertThrows(RuntimeException.class, () -> new Square(width));
 
         //then
         Assertions.assertEquals("Error: the side of the square must be greater than zero.", result.getMessage());
@@ -51,10 +48,9 @@ class SquareTest {
     void shouldCalculatePerimeterWithWidthFour() {
         //given
         double width = 4;
-        double height = 4;
 
         //when
-        Square square = new Square(height,width);
+        Square square = new Square(width);
         double result = square.getPerimeter();
 
         //then
