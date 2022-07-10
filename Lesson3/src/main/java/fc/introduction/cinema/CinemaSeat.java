@@ -4,15 +4,19 @@ public class CinemaSeat {
 
     private final int seatNumber;
     private final int rowNumber;
-    private boolean state;
+    private boolean isTaken;
 
-    public CinemaSeat(int numberOfSeat, int rowNumber, boolean state) {
+    public CinemaSeat(int numberOfSeat, int rowNumber, boolean isTaken) {
         this.seatNumber = numberOfSeat;
         this.rowNumber = rowNumber;
-        this.state = state;
+        this.isTaken = false;
     }
 
-    public boolean isSeatFree(){
-        return state;
+    public boolean isFree(){
+        return isTaken;
+    }
+
+    public void setTaken(boolean taken) {
+        isTaken = taken;
     }
 }
