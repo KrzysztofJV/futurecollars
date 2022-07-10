@@ -2,14 +2,7 @@ package fc.introduction.fizzBuzz;
 
 public class FizzBuzz {
 
-    private final int minValue, maxValue;
-
-    public FizzBuzz(int minValue, int maxValue) {
-        this.minValue = minValue;
-        this.maxValue = maxValue;
-    }
-
-    public void getFizzBuzz(){
+    public void getFizzBuzz(int minValue, int maxValue){
         for (int i = minValue; i < maxValue+1; i++) {
             if (i % 15 == 0){
                 System.out.println("FizzBuzz");
