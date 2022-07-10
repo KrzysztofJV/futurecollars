@@ -8,7 +8,7 @@ public class WordFinder {
 
     private static final String pathToResources = "Lesson6/src/main/resources/";
 
-    public static void countsTheNumberOfCharactersInTheFile(String nameOfFile, String wordToCheck) {
+    public static void countTheNumberOfCharactersInTheFile(String nameOfFile, String wordToCheck) {
         try {
             String result = Files.readString(Paths.get(pathToResources + nameOfFile));
             if (result.contains(wordToCheck)){
