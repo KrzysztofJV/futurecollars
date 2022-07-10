@@ -1,4 +1,4 @@
-package fc.introduction.taskEight;
+package com.futurecollars.lesson6_8;
 
 public class WrongTypeOfDataException extends RuntimeException {
 
