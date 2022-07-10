@@ -2,7 +2,7 @@ package com.futurecollars.lesson6_9;
 
 public class NumberDivisibleByThree {
 
-    public void validate(int[] values) {
+    public static void validate(int[] values) {
 
         for (int value : values) {
             try {
