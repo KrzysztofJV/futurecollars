@@ -1,8 +1,8 @@
 package com.futurecollars.lesson6_8;
 
-public class Main {
+public class PeselValidator {
 
-    public static void checkPesel(String pesel) {
+    public static void validatePesel(String pesel) {
 
         if (!pesel.matches("\\d+?")) {
             throw new WrongTypeOfDataException("Only digits are allowed.");
