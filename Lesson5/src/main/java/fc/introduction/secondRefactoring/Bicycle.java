@@ -1,8 +1,14 @@
 package fc.introduction.secondRefactoring;
 
-public class Bicycle extends Vehicle{
+public class Bicycle implements Vehicle {
 
-    public Bicycle(String nameOfVehicle) {
-        super(nameOfVehicle);
+    @Override
+    public void start() {
+        System.out.println("The bike starts to go.");
+    }
+
+    @Override
+    public void stop() {
+        System.out.println("The bike stop.");
     }
 }

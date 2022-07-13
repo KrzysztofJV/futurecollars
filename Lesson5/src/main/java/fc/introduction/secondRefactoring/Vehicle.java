@@ -1,14 +1,7 @@
 package fc.introduction.secondRefactoring;
 
-public class Vehicle {
+public interface Vehicle {
 
-    private final String nameOfVehicle;
-
-    public Vehicle(String nameOfVehicle) {
-        this.nameOfVehicle = nameOfVehicle;
-    }
-
-    public String getNameOfVehicle() {
-        return nameOfVehicle;
-    }
+    public void start();
+    public void stop();
 }

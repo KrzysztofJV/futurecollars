@@ -1,8 +1,28 @@
 package fc.introduction.secondRefactoring;
 
-public class Car extends MotorVehicle{
+public class Car implements Vehicle {
 
-    public Car(String nameOfVehicle) {
-        super(nameOfVehicle);
+    private final Engine engine;
+
+    public Car(Engine engine){
+        this.engine = engine;
+    }
+
+    @Override
+    public void start() {
+        System.out.println("Starting the engine");
+        engine.setStarted(true);
+        System.out.println("The engine is started:");
+        engine.start();
+        System.out.println("The car goes.");
+    }
+
+    @Override
+    public void stop() {
+        System.out.println("Stopping the engine:");
+        engine.setStarted(false);
+        System.out.println("The engine is stopped:");
+        engine.stop();
+        System.out.println("The car stop.");
     }
 }
