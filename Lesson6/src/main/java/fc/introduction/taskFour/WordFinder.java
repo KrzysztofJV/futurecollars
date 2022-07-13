@@ -6,11 +6,11 @@ import java.nio.file.Paths;
 
 public class WordFinder {
 
-    private static final String pathToResources = "Lesson6/src/main/resources/";
+    private static final String PATH_TO_RESOURCES = "Lesson6/src/main/resources/";
 
-    public static void countTheNumberOfCharactersInTheFile(String nameOfFile, String wordToCheck) {
+    public static void searchForTheGivenWordInTheText(String nameOfFile, String wordToCheck) {
         try {
-            String result = Files.readString(Paths.get(pathToResources + nameOfFile));
+            String result = Files.readString(Paths.get(PATH_TO_RESOURCES + nameOfFile));
             if (result.contains(wordToCheck)){
                 System.out.println("This word appears in the text");
             } else {
