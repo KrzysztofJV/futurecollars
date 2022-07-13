@@ -1,6 +1,6 @@
 package com.futurecollars.lesson6_9;
 
-public class NumberDivisibleByThree {
+public class DivisibleByThreeValidator {
 
     public static void validate(int[] values) {
 
