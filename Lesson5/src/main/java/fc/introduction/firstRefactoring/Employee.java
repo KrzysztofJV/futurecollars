@@ -2,7 +2,7 @@ package fc.introduction.firstRefactoring;
 
 public class Employee {
 
-    public static final String WHITE_SPACE = " ";
+    private static final String WHITE_SPACE = " ";
     private final String name;
     private final String surName;
     private int age;
@@ -10,29 +10,23 @@ public class Employee {
     private int bonus;
 
 
-    public Employee(String name, String surName) {
-        this.name = name;
-        this.surName = surName;
-    }
-
-    public Employee(String name, String surName, int age) {
-        this.name = name;
-        this.age = age;
-        this.surName = surName;
+    public Employee(String name, int age, int baseSalary, int bonus, String surName) {
+        this(name, surName, age, baseSalary);
+        this.bonus = bonus;
     }
 
     public Employee(String name, String surName, int age, int baseSalary) {
-        this.name = name;
-        this.age = age;
+        this(name, surName, age);
         this.baseSalary = baseSalary;
-        this.surName = surName;
     }
 
-    public Employee(String name, int age, int baseSalary, int bonus, String surName) {
-        this.name = name;
+    public Employee(String name, String surName, int age) {
+        this(name, surName);
         this.age = age;
-        this.baseSalary = baseSalary;
-        this.bonus = bonus;
+    }
+
+    public Employee(String name, String surName) {
+        this.name = name;
         this.surName = surName;
     }
 
