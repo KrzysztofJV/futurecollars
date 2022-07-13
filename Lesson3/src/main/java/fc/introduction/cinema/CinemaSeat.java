@@ -6,17 +6,25 @@ public class CinemaSeat {
     private final int rowNumber;
     private boolean isTaken;
 
-    public CinemaSeat(int numberOfSeat, int rowNumber, boolean isTaken) {
-        this.seatNumber = numberOfSeat;
+    public CinemaSeat(int seatNumber, int rowNumber) {
+        this.seatNumber = seatNumber;
         this.rowNumber = rowNumber;
         this.isTaken = false;
     }
 
-    public boolean isFree(){
-        return isTaken;
+    public boolean isTaken(){
+        return this.isTaken;
     }
 
-    public void setTaken(boolean taken) {
-        isTaken = taken;
+    public int getSeatNumber() {
+        return this.seatNumber;
+    }
+
+    public int getRowNumber() {
+        return this.rowNumber;
+    }
+
+    public void setTaken(boolean isTaken) {
+        this.isTaken = isTaken;
     }
 }
