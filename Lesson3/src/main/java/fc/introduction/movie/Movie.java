@@ -2,16 +2,32 @@ package fc.introduction.movie;
 
 public class Movie {
 
-    private String title;
-    private String directorNameAndSurname;
-    private int movieDuration;
-    private int yearProduction;
+    private final String title;
+    private final String directorNameAndSurname;
+    private final int movieDuration;
+    private final int productionYear;
 
-    public Movie(String title, String directorNameAndSurname, int movieDuration, int yearProduction) {
+    public Movie(String title, String directorNameAndSurname, int movieDuration, int productionYear) {
         this.title = title;
         this.directorNameAndSurname = directorNameAndSurname;
         this.movieDuration = movieDuration;
-        this.yearProduction = yearProduction;
+        this.productionYear = productionYear;
+    }
+
+    public String getTitle() {
+        return title;
+    }
+
+    public String getDirectorNameAndSurname() {
+        return directorNameAndSurname;
+    }
+
+    public int getMovieDuration() {
+        return movieDuration;
+    }
+
+    public int getProductionYear() {
+        return productionYear;
     }
 
     @Override
@@ -20,7 +36,7 @@ public class Movie {
                 "title='" + title + '\'' +
                 ", nameAndSurnameDirector='" + directorNameAndSurname + '\'' +
                 ", duration=" + movieDuration +
-                ", productionYear=" + yearProduction +
+                ", productionYear=" + productionYear +
                 '}';
     }
 }
