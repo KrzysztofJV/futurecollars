@@ -1,6 +1,4 @@
-import com.futurecollars.taskEight.BaseSalaryService;
-import com.futurecollars.taskEight.SalaryCalculator;
-import com.futurecollars.taskEight.SaturdaySalaryService;
+package com.futurecollars.taskEight;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvSource;
