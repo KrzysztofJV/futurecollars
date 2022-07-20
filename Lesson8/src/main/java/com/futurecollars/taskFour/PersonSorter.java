@@ -17,16 +17,16 @@ public class PersonSorter {
         personList.add(new Person("Michael", "Jones", 1985, 201, 122));
 
         Collections.sort(personList);
-        PersonPrinter.printPerson(personList);
+        personList.forEach(System.out::println);
 
         System.out.println();
 
         personList.sort(Person.heightComparator);
-        PersonPrinter.printPerson(personList);
+        personList.forEach(System.out::println);
 
         System.out.println();
 
         personList.sort(Person.weightComparator);
-        PersonPrinter.printPerson(personList);
+        personList.forEach(System.out::println);
     }
 }

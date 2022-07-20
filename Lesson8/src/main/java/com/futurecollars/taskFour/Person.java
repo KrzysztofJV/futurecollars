@@ -56,4 +56,15 @@ public class Person implements Comparable<Person>{
     public double getWeight() {
         return weight;
     }
+
+    @Override
+    public String toString() {
+        return "Person{" +
+                "name='" + name + '\'' +
+                ", surname='" + surname + '\'' +
+                ", dateOfBirth=" + dateOfBirth +
+                ", height=" + height +
+                ", weight=" + weight +
+                '}';
+    }
 }
