@@ -20,7 +20,7 @@ public class Engine{
         return started;
     }
 
-    public void setStarted(boolean started) {
+    public void setEngineStarted(boolean started) {
         this.started = started;
     }
 }
