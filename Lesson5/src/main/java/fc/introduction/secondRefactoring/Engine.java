@@ -4,13 +4,13 @@ public class Engine{
 
     private boolean started;
 
-    protected void start() {
+    public void start() {
         if (!started) {
             started = true;
         }
     }
 
-    protected void stop() {
+    public void stop() {
         if (started) {
             started = false;
         }
@@ -18,9 +18,5 @@ public class Engine{
 
     public boolean isStarted() {
         return started;
-    }
-
-    public void setEngineStarted(boolean started) {
-        this.started = started;
     }
 }
