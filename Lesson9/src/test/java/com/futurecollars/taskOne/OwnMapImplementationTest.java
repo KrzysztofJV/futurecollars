@@ -1,53 +1,77 @@
 package com.futurecollars.taskOne;
 
-import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
 class OwnMapImplementationTest {
 
-    public OwnMapImplementation ownMapImplementation;
+    @Test
+    public void shouldPutIntoMap() {
+        OwnMapImplementation hashMap = new OwnMapImplementation();
 
-    @BeforeEach
-    void setUp() {
-        ownMapImplementation = new OwnMapImplementation();
-        ownMapImplementation.put("Anna", "Poland");
-        ownMapImplementation.put("Hans", "Germany");
-        ownMapImplementation.put("Jean", "France");
+        hashMap.put("key1", "value1");
+
+        assertEquals("value1", hashMap.get("key1"));
     }
 
     @Test
-    void putElement() {
-        assertEquals("Germany", ownMapImplementation.get("Hans"));
+    public void shouldNotPutIntoMapTwiceSameKey() {
+        OwnMapImplementation hashMap = new OwnMapImplementation();
+
+        hashMap.put("key1", "value1");
+        hashMap.put("key1", "value123");
+
+        assertEquals(1, hashMap.getSize());
+        assertEquals("value123", hashMap.get("key1"));
     }
 
     @Test
-    void containsKeyHansIsPresent() {
-        assertTrue(ownMapImplementation.containsKey("Hans"));
+    public void shouldFindKeyIfExists() {
+        OwnMapImplementation hashMap = new OwnMapImplementation();
+
+        hashMap.put("key1", "value1");
+
+        assertTrue(hashMap.containsKey("key1"));
     }
 
     @Test
-    void containsKeyJohnIsAbsent() {
-        assertFalse(ownMapImplementation.containsKey("John"));
+    public void shouldFindValueIfExists() {
+        OwnMapImplementation hashMap = new OwnMapImplementation();
+
+        hashMap.put("key1", "value1");
+
+        assertTrue(hashMap.containsValue("value1"));
     }
 
     @Test
-    void containsValuePoland() {
-        assertTrue(ownMapImplementation.containsValue("Poland"));
+    public void shouldNotFindKeyIfNotExists() {
+        OwnMapImplementation hashMap = new OwnMapImplementation();
+
+        hashMap.put("key111111", "value1");
+
+        assertFalse(hashMap.containsKey("key1"));
     }
 
     @Test
-    void notContainsValueEngland() {
-        assertFalse(ownMapImplementation.containsValue("England"));
+    public void shouldNotFindValueIfNotExists() {
+        OwnMapImplementation hashMap = new OwnMapImplementation();
+
+        hashMap.put("key1", "value111111");
+
+        assertFalse(hashMap.containsValue("value1"));
     }
 
     @Test
-    void removeElement() {
-        assertEquals("Germany", ownMapImplementation.remove("Hans"));
-    }
+    public void shouldRemoveKey() {
+        OwnMapImplementation hashMap = new OwnMapImplementation();
 
-    @Test
-    void getElement() {
-        assertEquals("France", ownMapImplementation.remove("Jean"));
+        hashMap.put("key1", "value1");
+        hashMap.put("key2", "value2");
+        hashMap.put("key3", "value3");
+        hashMap.put("key4", "value4");
+
+        hashMap.remove("key2");
+
+        assertFalse(hashMap.containsKey("key2"));
     }
 }
