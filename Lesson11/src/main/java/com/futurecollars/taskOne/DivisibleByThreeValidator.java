@@ -16,9 +16,4 @@ public class DivisibleByThreeValidator {
                 .boxed()
                 .collect(Collectors.toList());
     }
-
-    public static void main(String[] args) {
-        List<Integer> filteredNumbers = integersDivisibleByThree(0, 100);
-        System.out.println(filteredNumbers);
-    }
 }
