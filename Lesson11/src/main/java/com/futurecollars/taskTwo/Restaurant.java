@@ -3,7 +3,6 @@ package com.futurecollars.taskTwo;
 import java.util.Arrays;
 import java.util.Comparator;
 import java.util.List;
-import java.util.stream.Stream;
 
 public class Restaurant {
 
@@ -51,7 +50,7 @@ public class Restaurant {
         System.out.println();
         System.out.println("Is there a vegan pizza that contains tomato and pepper? " + checkIsVeganAndContainsTomatoAndPepper(menu));
         System.out.println();
-        System.out.println("Whether all dishes contain mozzarella? " + doesContainsMozzarella(menu));
+        System.out.println("Whether all dishes contain mozzarella? " + doesEveryDishContainsMozzarella(menu));
         System.out.println();
         getPizzaWithHighestCalories(menu);
         System.out.println();
@@ -59,26 +58,25 @@ public class Restaurant {
     }
 
     public static void printVegan(List<Pizza> menu) {
-        Stream<Pizza> pizzaStream = menu.stream();
-        pizzaStream.filter(Pizza::isVegan)
-                .forEach(pizza -> System.out.println(pizza.getName()));
+        menu.stream()
+                .filter(Pizza::isVegan)
+                .map(Pizza::getName)
+                .forEach(System.out::println);
     }
 
     public static void printContainsCelery(List<Pizza> menu) {
-        Stream<Pizza> pizzaStream = menu.stream();
-        pizzaStream.filter(pizza -> pizza.getIngredients().contains(Ingredients.CELERY))
-                .forEach(pizza -> System.out.println(pizza.getName()));
+        menu.stream()
+                .filter(pizza -> pizza.getIngredients().contains(Ingredients.CELERY))
+                .map(Pizza::getName)
+                .forEach(System.out::println);
     }
 
     public static boolean checkIsVeganAndContainsTomatoAndPepper(List<Pizza> menu) {
-        Stream<Pizza> pizzaStream = menu.stream();
-        return pizzaStream.anyMatch(pizza -> pizza.isVegan() && pizza.getIngredients().contains(Ingredients.TOMATO) && pizza.getIngredients().contains(Ingredients.PEPPER));
+        return menu.stream().anyMatch(pizza -> pizza.isVegan() && pizza.getIngredients().contains(Ingredients.TOMATO) && pizza.getIngredients().contains(Ingredients.PEPPER));
     }
 
-    public static boolean doesContainsMozzarella(List<Pizza> menu) {
-        Stream<Pizza> pizzaStream = menu.stream();
-        return pizzaStream.filter(pizza -> pizza.getIngredients().contains(Ingredients.MOZZARELLA))
-                .count() == menu.size();
+    public static boolean doesEveryDishContainsMozzarella(List<Pizza> menu) {
+        return menu.stream().allMatch(pizza -> pizza.getIngredients().contains(Ingredients.MOZZARELLA));
     }
 
     public static void getPizzaWithHighestCalories(List<Pizza> menu) {
