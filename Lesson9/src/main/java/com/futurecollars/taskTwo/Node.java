@@ -2,19 +2,19 @@ package com.futurecollars.taskTwo;
 
 public class Node {
 
-    private Integer data;
+    private Integer value;
     private Node next;
 
-    public Node(Integer data) {
-        this.data = data;
+    public Node(int value) {
+        this.value = value;
     }
 
-    public Integer getData() {
-        return data;
+    public int getValue() {
+        return value;
     }
 
-    public void setData(Integer data) {
-        this.data = data;
+    public void setValue(int value) {
+        this.value = value;
     }
 
     public Node getNext() {

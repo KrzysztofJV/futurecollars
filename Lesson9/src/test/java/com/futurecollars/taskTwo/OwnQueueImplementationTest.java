@@ -1,61 +1,45 @@
 package com.futurecollars.taskTwo;
 
-import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 class OwnQueueImplementationTest {
 
-    public OwnQueueImplementation ownQueueImplementation;
-
-    @BeforeEach
-    void setUp() {
-        ownQueueImplementation = new OwnQueueImplementation();
-        ownQueueImplementation.add(0);
-        ownQueueImplementation.add(1);
-        ownQueueImplementation.add(2);
-        ownQueueImplementation.add(3);
-        ownQueueImplementation.add(4);
-        ownQueueImplementation.add(5);
-    }
-
-    // addElement na pustej liscie
-    // addElement na jednoelementowej liscie
-    // addElement na kilku elementowej liscie
     @Test
-    void addElement() {
-        assertTrue(ownQueueImplementation.add(6));
+    public void shouldInsertIntoQueue() {
+        OwnQueueImplementation queue = new OwnQueueImplementation();
+
+        queue.add(1);
+
+        assertEquals(1, queue.element());
     }
 
     @Test
-    void size() {
-        assertEquals(6, ownQueueImplementation.size());
+    public void shouldRemoveFromQueue() {
+        OwnQueueImplementation queue = new OwnQueueImplementation();
+        queue.add(1);
+        queue.add(2);
+        queue.add(3);
+
+        queue.remove();
+
+        assertEquals(2, queue.element());
     }
 
-    // remove na pustej liscie
-    // remove na jednoelementowej liscie
-    // remove na kilku elementowej liscie
     @Test
-    void removeElement() {
-        int[] expectedElements = {0, 1, 2, 3, 4, 5};
-        int iterator = 0;
-        while (ownQueueImplementation.size() != 0) {
-            assertEquals(expectedElements[iterator], ownQueueImplementation.remove());
-            iterator++;
-        }
+    public void shouldReturnQueueSizeWhenAdded() {
+        OwnQueueImplementation queue = new OwnQueueImplementation();
+
+        queue.add(1);
+
+        assertEquals(1, queue.getSize());
     }
 
-    // element na pustej liscie
-    // element na jednoelementowej liscie
-    // element na kilku elementowej liscie
     @Test
-    void element() {
-        int[] expectedElements = {0, 1, 2, 3, 4, 5};
-        int iterator = 0;
-        while (ownQueueImplementation.size() != 0) {
-            assertEquals(expectedElements[iterator], ownQueueImplementation.element());
-            ownQueueImplementation.remove();
-            iterator++;
-        }
+    public void shouldReturnFalseWhenEmptyQueue() {
+        OwnQueueImplementation queue = new OwnQueueImplementation();
+
+        assertTrue(queue.isEmpty());
     }
 }

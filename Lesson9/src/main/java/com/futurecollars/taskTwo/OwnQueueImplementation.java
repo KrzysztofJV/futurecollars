@@ -2,45 +2,53 @@ package com.futurecollars.taskTwo;
 
 public class OwnQueueImplementation implements OwnQueue {
 
-    private Node front;
-    private Node back;
-    private int currentSize = 0;
+    private int size;
+    private Node front, back;
 
-    @Override
-    public boolean add(Integer e) {
-        Node node = new Node(e);
-        if (currentSize == 0) {
-            node.next = null;
+    public OwnQueueImplementation() {
+        size = 0;
+        front = null;
+        back = null;
+    }
+
+    public boolean add(Integer value) {
+        Node node = new Node(value);
+        if (isEmpty()) {
             front = node;
-            back = front;
         } else {
-            back.next = node;
-            back = node;
+            back.setNext(node);
         }
-        currentSize++;
+        back = node;
+        size++;
         return true;
     }
 
-    public int size() {
-        return currentSize;
-    }
-
-    @Override
     public Integer remove() {
-        if (currentSize == 0) {
-            throw new ArrayIndexOutOfBoundsException();
+        if (isEmpty()) {
+            throw new RuntimeException("No elements");
         }
-        Integer element = front.data;
-        front = front.next;
-        currentSize--;
-        return element;
+        int value = front.getValue();
+        front = front.getNext();
+        size--;
+        if (isEmpty()) {
+            back = null;
+        }
+        return value;
     }
 
-    @Override
     public Integer element() {
-        if (currentSize == 0) {
-            throw new ArrayIndexOutOfBoundsException();
+        if (isEmpty()) {
+            throw new RuntimeException("No elements");
         }
-        return front.data;
+        return front.getValue();
+    }
+
+    public boolean isEmpty() {
+        return size == 0;
+    }
+
+    public int getSize() {
+        return size;
     }
 }
+
