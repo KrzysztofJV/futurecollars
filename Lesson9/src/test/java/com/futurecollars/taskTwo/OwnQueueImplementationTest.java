@@ -19,6 +19,9 @@ class OwnQueueImplementationTest {
         ownQueueImplementation.add(5);
     }
 
+    // addElement na pustej liscie
+    // addElement na jednoelementowej liscie
+    // addElement na kilku elementowej liscie
     @Test
     void addElement() {
         assertTrue(ownQueueImplementation.add(6));
@@ -26,15 +29,12 @@ class OwnQueueImplementationTest {
 
     @Test
     void size() {
-        int[] expectedSizes = {6, 5, 4, 3, 2, 1};
-        int iterator = 0;
-        while (ownQueueImplementation.size() != 0) {
-            assertEquals(expectedSizes[iterator], ownQueueImplementation.size());
-            ownQueueImplementation.remove();
-            iterator++;
-        }
+        assertEquals(6, ownQueueImplementation.size());
     }
 
+    // remove na pustej liscie
+    // remove na jednoelementowej liscie
+    // remove na kilku elementowej liscie
     @Test
     void removeElement() {
         int[] expectedElements = {0, 1, 2, 3, 4, 5};
@@ -45,6 +45,9 @@ class OwnQueueImplementationTest {
         }
     }
 
+    // element na pustej liscie
+    // element na jednoelementowej liscie
+    // element na kilku elementowej liscie
     @Test
     void element() {
         int[] expectedElements = {0, 1, 2, 3, 4, 5};
