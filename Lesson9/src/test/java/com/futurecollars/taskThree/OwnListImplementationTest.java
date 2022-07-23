@@ -1,54 +1,41 @@
 package com.futurecollars.taskThree;
 
-import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 class OwnListImplementationTest {
 
-    public OwnListImplementation ownListImplementation;
+    @Test
+    public void shouldAddDifferentTypesToList() {
+        OwnListImplementation<String> stringList = new OwnListImplementation<>();
+        stringList.add("1");
 
-    @BeforeEach
-    void setUp() {
-        ownListImplementation = new OwnListImplementation();
-        ownListImplementation.add(0);
-        ownListImplementation.add(1);
-        ownListImplementation.add(2);
-        ownListImplementation.add(3);
-        ownListImplementation.add(4);
+        OwnListImplementation<Integer> integerList = new OwnListImplementation<>();
+        integerList.add(1);
+
+        assertEquals("1", stringList.get(0));
+        assertEquals(1, integerList.get(0));
     }
 
     @Test
-    void addElement() {
-        ownListImplementation.add(5);
-        ownListImplementation.add(6);
-        ownListImplementation.add(7);
-        ownListImplementation.add(8);
-        ownListImplementation.add(9);
-        ownListImplementation.add(10);
-        ownListImplementation.add(11);
-        assertTrue(ownListImplementation.add(11));
+    public void shouldRemoveObjectFromList() {
+        OwnListImplementation<String> stringList = new OwnListImplementation<>();
+        stringList.add("1");
+        stringList.add("2");
+        stringList.add("3");
+
+        stringList.remove("2");
+
+        assertEquals("3", stringList.get(1));
     }
 
     @Test
-    void getElement() {
-        assertEquals(3, ownListImplementation.get(3));
-    }
+    public void shouldReturnListSize() {
+        OwnListImplementation<String> stringList = new OwnListImplementation<>();
+        stringList.add("1");
+        stringList.add("2");
+        stringList.add("3");
 
-    @Test
-    void shouldReturnException() {
-        assertThrows(RuntimeException.class, () -> {
-            ownListImplementation.get(8);
-        });
-    }
-
-    @Test
-    void shouldRemoveElement_3() {
-        assertTrue(ownListImplementation.remove(3));
-    }
-
-    @Test
-    void getSizeList() {
-        assertEquals(5, ownListImplementation.size());
+        assertEquals(3, stringList.size());
     }
 }

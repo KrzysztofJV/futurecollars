@@ -2,7 +2,7 @@ package com.futurecollars.taskThree;
 
 public interface OwnList<E> {
 
-    static final int DEFAULT_CAPACITY = 10;
+    int DEFAULT_CAPACITY = 10;
 
     boolean add(E e);
 

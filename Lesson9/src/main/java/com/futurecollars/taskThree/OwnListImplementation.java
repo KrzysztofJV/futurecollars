@@ -2,53 +2,62 @@ package com.futurecollars.taskThree;
 
 public class OwnListImplementation<E> implements OwnList<E> {
 
-    private E[] data;
-    private int currentSize = 0;
+    private Object[] values;
+    private int size;
 
     public OwnListImplementation() {
-        data = (E[]) new Object[DEFAULT_CAPACITY];
+        values = new Object[DEFAULT_CAPACITY];
     }
 
     @Override
-    public boolean add(E e) {
-        if (data.length - currentSize == 0) {
-            E[] newData = data;
-            data = (E[]) new Object[currentSize + 10];
-            for (int i = 0; i < currentSize; i++) {
-                data[i] = newData[i];
-            }
-        }
-        data[currentSize] = e;
-        currentSize++;
+    public boolean add(E element) {
+        resize();
+        values[size] = element;
+        size++;
         return true;
     }
 
     @Override
-    public E get(int index) {
-        if (index >= currentSize || index < 0) {
-            throw new ArrayIndexOutOfBoundsException();
+    public E get(int i) {
+        if (i < size && i >= 0) {
+            return (E) values[i];
+        } else {
+            throw new IndexOutOfBoundsException();
         }
-        return data[index];
     }
 
     @Override
     public boolean remove(E o) {
-        E[] newData = data;
-        boolean notFoundYet = true;
-        currentSize--;
-        data = (E[]) new Object[currentSize];
-        for (int i = 0, j = 0; i < currentSize; i++, j++) {
-            if (newData[i] == o && notFoundYet) {
-                j++;
-                notFoundYet = false;
+        int index = -1;
+        for (int i = 0; i < values.length; i++) {
+            if (values[i].equals(o)) {
+                index = i;
+                break;
             }
-            data[i] = newData[j];
         }
-        return true;
+        remove(index);
+        return index != -1;
     }
 
     @Override
     public int size() {
-        return currentSize;
+        return size;
+    }
+
+    private void remove(int index) {
+        if (index > size) {
+            throw new IndexOutOfBoundsException();
+        }
+        System.arraycopy(values, index + 1, values, index, size - index - 1);
+        values[--size] = null;
+        resize();
+    }
+
+    private void resize() {
+        if (size >= DEFAULT_CAPACITY) {
+            Object[] newValues = new Object[size * 3 / 2 + 1];
+            System.arraycopy(values, 0, newValues, 0, size);
+            values = newValues;
+        }
     }
 }
